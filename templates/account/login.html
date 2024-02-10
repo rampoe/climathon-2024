@@ -6,10 +6,12 @@
 {% endblock title %}
 
 {% block content %}
-  <h2>Log in</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button class="btn btn-success" type="submit">Log in</button>
-  </form>
+  <div class="hero-wrap ptb-100 container">
+    <h2>Log in</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button class="btn btn-success" type="submit">Log in</button>
+    </form>
+  </div>
 {% endblock content %}
