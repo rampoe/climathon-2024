@@ -46,29 +46,6 @@
 
   <body>
 
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li>
-              <a href="{% url "article_list" %}" class="nav-link px-2 link-dark">Articles</a>
-            </li>
-          </ul>
-
-          <div class="dropdown text-end">
-            {% if user.is_authenticated %}
-              <a href="#"
-                 class="d-block link-dark text-decoration-none dropdown-toggle"
-                 data-bs-toggle="dropdown"
-                 aria-expanded="false">{{ user.email }}</a>
-              <ul class="dropdown-menu text-small">
-                <li>
-                  <a class="dropdown-item" href="{% url "account_change_password" %}">Change password</a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li>
-                  <a class="dropdown-item" href="{% url "account_logout" %}">Sign out</a>
-                </li>
-              </ul>
             {% else %}
               <form class="form-inline ml-auto">
                 <a href="{% url "account_login" %}" class="btn btn-outline-secondary">Log in</a>
@@ -310,15 +287,16 @@
                           </li>
                         </ul>
                       </li>
+                      {% if user.is_authenticated %}
                       <li class="nav-item">
                         <a href="#" class="nav-link">
-                          Blog
+                          Profile
                           <i class="ri-add-line"></i>
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
-                            <a href="#" class="nav-link">
-                              Blog Layout
+                            <a href="{% url "account_change_password" %}" class="nav-link">
+                              Change password
                               <i class="ri-add-line"></i>
                             </a>
                             <ul class="dropdown-menu">
@@ -334,8 +312,8 @@
                             </ul>
                           </li>
                           <li class="nav-item">
-                            <a href="#" class="nav-link">
-                              Single Blog
+                            <a href="{% url "account_logout" %}" class="nav-link">
+                              Log out
                               <i class="ri-add-line"></i>
                             </a>
                             <ul class="dropdown-menu">
@@ -352,6 +330,50 @@
                           </li>
                         </ul>
                       </li>
+                      {% else %}
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          Sign in
+                          <i class="ri-add-line"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a href="{% url "account_change_password" %}" class="nav-link">
+                              Log in
+                              <i class="ri-add-line"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li class="nav-item">
+                                <a href="blog-no-sidebar.html" class="nav-link">Blog Grid</a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="blog-left-sidebar.html" class="nav-link">Blog Left Sidebar</a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="blog-right-sidebar.html" class="nav-link">Blog Right Sidebar</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{% url "account_logout" %}" class="nav-link">
+                              Sign up
+                              <i class="ri-add-line"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li class="nav-item">
+                                <a href="blog-details-no-sidebar.html" class="nav-link">Blog Details No Sidebar</a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="blog-details-left-sidebar.html" class="nav-link">Blog Details Left Sidebar</a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="blog-details-right-sidebar.html" class="nav-link">Blog Details Right Sidebar</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      {% endif %}
                       <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact Us</a>
                       </li>
