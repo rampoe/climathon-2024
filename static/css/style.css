@@ -7054,20 +7054,36 @@ article {
 
 .rampoe-hero-section {
   position: relative;
+  color: white;
 }
 
 .rampoe-hero-section::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.195);
+  background-color: rgba(0, 0, 0, 0.512);
   inset: 0;
   position: absolute;
+  color: white
 }
 
 .rampoe-hero-section::before {
   content: "";
-  background-image: url("../img/promo-video-bg.jpg");
+  background-image: url("../img/hero-background.jpg");
+  background-size: cover;
   position: absolute;
   inset: 0;
+  animation: change-background 5s ease;
+  animation-iteration-count: infinite;
+  color: white;
+}
+
+@keyframes change-background {
+  0% {
+    background-image: url("../img/hero-background.jpg");
+  }
+
+  50% {
+    background-image: url("../img/hero-background-2.jpg");
+  }
 }
 
 .rampoe-slider {
