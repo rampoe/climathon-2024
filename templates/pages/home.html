@@ -3,51 +3,36 @@
 {% load static %}
 {% load i18n %}
 
-{% block content %}
+{% block title %}
+  Home page
+{% endblock title %}
 
+{% block content %}
   <!-- Hero Section Start -->
-  <section class="hero-wrap style3">
-    <img height="" width="" src="{% static "img/hero/hero-shape-10" %}.jpg" alt="Image" class="hero-shape-one">
+  <section class="hero-wrap style3 rampoe-hero-section">
+    {% comment %} <img height="" width="" src="{% static "img/hero/hero-shape-10" %}.jpg" alt="Image" class="hero-shape-one"> {% endcomment %}
     <img height="" width="" src="{% static "img/hero/hero-shape-3" %}.png" alt="Image" class="hero-shape-two moveHorizontal">
     <img height="" width="" src="{% static "img/hero/hero-shape-11" %}.png" alt="Image" class="hero-shape-three">
     <img height="" width="" src="{% static "img/hero/cloud-3.png" %}" alt="Image" class="hero-shape-four moveLeft">
     <div class="banner-slide owl-carousel owl-theme">
-      <div class="container">
-        <div class="row gx-5 align-items-center">
-          <div class="col-md-6">
+      <div class="container ptb-100">
+        <div class="row gx-5 justify-content-center align-items-center">
+          {% comment %} <div class="col-md-6">
             <div class="hero-img-wrap">
-              <img height="" width="" src="{% static "img/hero/hero-shape-5" %}.png" alt="Image" class="hero-img-shape waving_left">
-              <img height="" width="" src="{% static "img/hero/hero-img-2" %}.jpg" alt="Image">
+              <img height="" width="" src="{% static "img/hero/hero-shape-5.png" %}" alt="Image" class="hero-img-shape waving_left">
+              <img height="" width="" src="{% static "img/hero/hero-img-2.jpg" %}" alt="Image">
             </div>
-          </div>
+          </div> {% endcomment %}
           <div class="col-md-6">
-            <div class="hero-content">
+            <div class="hero-content d-flex flex-column justify-content-center text-center">
               <span>We'll Save Our Planet</span>
               <h1>Lets Make Our Earth Green and Clean</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollic itudin consectetur netus dui, ultrices or lectus ac egestas. Vivamus tellus vestibulum aliquet arcu.
               </p>
-              <a href="{% url "home" %}" class="btn style2">Join With us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row gx-5 align-items-center">
-          <div class="col-md-6">
-            <div class="hero-img-wrap">
-              <img height="" width="" src="{% static "img/hero/hero-shape-5" %}.png" alt="Image" class="hero-img-shape waving_left">
-              <img height="" width="" src="{% static "img/hero/hero-img-2" %}.jpg" alt="Image">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="hero-content">
-              <span>We'll Save Our Planet</span>
-              <h1>Lets Make Our Earth Green and Clean</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollic itudin consectetur netus dui, ultrices or lectus ac egestas. Vivamus tellus vestibulum aliquet arcu.
+                <a href="{% url "home" %}" class="btn style2 px-5">Join With us</a>
               </p>
-              <a href="{% url "home" %}" class="btn style2">Join With us</a>
             </div>
           </div>
         </div>
