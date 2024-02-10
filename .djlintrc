@@ -1,3 +1,4 @@
 {
-  "ignore": "H019"
+  "ignore": "H019",
+  "max_blank_lines": 1
 }
